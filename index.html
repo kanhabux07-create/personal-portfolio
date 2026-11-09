@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alex Rivera — Creative Developer &amp; Digital Creator</title>
+  <meta name="description" content="Personal portfolio of Alex Rivera. Creative Developer and Digital Creator crafting editorial web experiences, minimalist aesthetics, and resilient frontend systems.">
+
+  <!-- Google Fonts: Syne (Editorial Display), Instrument Serif (Chic Italic Serif), Plus Jakarta Sans (Clean Modern Sans), Space Mono (Coordinates) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- GSAP & ScrollTrigger (Smooth Editorial Entrance & Scroll Animations) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+
+  <!-- 1. Content Configuration (The single file to edit all website content) -->
+  <script src="content.js" defer></script>
+
+  <!-- 2. Core Application Engine -->
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+
+  <!-- Subtle Film Grain Overlay for Tactile Paper Aesthetic -->
+  <div class="grain-overlay" aria-hidden="true"></div>
+
+  <!-- ========================================================================
+       A. NAVIGATION BAR
+       ======================================================================== -->
+  <header class="site-nav" id="site-nav">
+    <div class="container nav-inner">
+      <!-- Personal Brand / Monogram -->
+      <a href="#hero" class="brand-link" aria-label="Go to top">
+        <div class="brand-monogram" id="brand-monogram">AR</div>
+        <div class="brand-info">
+          <span class="brand-name" id="brand-name">Alex Rivera</span>
+          <span class="brand-subtitle" id="brand-subtitle">PORTFOLIO // 2026</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu" id="nav-menu">
+          <!-- Populated dynamically from content.js -->
+        </ul>
+      </nav>
+
+      <!-- Nav Actions (Availability Indicator & Mobile Button) -->
+      <div class="nav-actions">
+        <div class="availability-pill" id="nav-availability" role="status" aria-live="polite">
+          <span class="status-dot"></span>
+          <span>Available for Work</span>
+        </div>
+
+        <button class="mobile-toggle" id="mobile-toggle-btn" aria-label="Toggle mobile menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Menu Drawer & Backdrop -->
+  <aside class="mobile-drawer" id="mobile-drawer" aria-label="Mobile Menu">
+    <div>
+      <div style="margin-bottom: 2.5rem;">
+        <span class="eyebrow">NAVIGATION</span>
+      </div>
+      <ul class="mobile-menu" id="mobile-menu">
+        <!-- Populated dynamically from content.js -->
+      </ul>
+    </div>
+    <div class="mobile-drawer-footer">
+      <div class="availability-pill" style="margin-bottom: 1.25rem;">
+        <span class="status-dot"></span>
+        <span>Available for Q1/Q2 2026</span>
+      </div>
+      <a href="#contact" class="btn btn-primary" style="width: 100%;">Get in Touch</a>
+    </div>
+  </aside>
+  <div class="drawer-backdrop" id="drawer-backdrop" aria-hidden="true"></div>
+
+  <main>
+    <!-- ======================================================================
+         B. HERO SECTION
+         ====================================================================== -->
+    <section class="hero-section" id="hero">
+      <div class="hero-bg-lines" aria-hidden="true"></div>
+      <div class="container hero-grid">
+        
+        <!-- Left Column: Typography, Tagline, CTAs & Live Clock -->
+        <div class="hero-content">
+          <div class="hero-meta-bar">
+            <span class="badge-pill" id="hero-badge">CREATIVE PORTFOLIO 2026</span>
+            <span class="badge-pill">FIG. 01 // OVERVIEW</span>
+          </div>
+
+          <h1 class="hero-headline" id="hero-headline">
+            <span class="greeting-text italic-serif" id="hero-greeting">Hi, I'm</span>
+            <span id="hero-name">Alex Rivera.</span>
+          </h1>
+
+          <div class="hero-profession" id="hero-profession">
+            Creative Developer &amp; Digital Creator
+          </div>
+
+          <p class="hero-bio" id="hero-bio">
+            Crafting thoughtful digital experiences, minimalist web architecture, and evocative visual identities at the intersection of design and technology.
+          </p>
+
+          <div class="hero-actions" id="hero-actions">
+            <a href="#contact" class="btn btn-primary" id="hero-primary-btn">
+              <span>Let's Collaborate</span>
+              <svg class="icon-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+            <a href="#projects" class="btn btn-secondary" id="hero-secondary-btn">Explore Works</a>
+          </div>
+
+          <!-- Dynamic Live Local Clock Widget -->
+          <div class="hero-local-clock">
+            <span class="clock-dot"></span>
+            <span id="local-clock-display">Loading local time...</span>
+          </div>
+        </div>
+
+        <!-- Right Column: Editorial Portrait Frame -->
+        <div class="hero-visual">
+          <div class="portrait-card">
+            <!-- Decorative Floating Sticker -->
+            <div class="sticker-badge">
+              <span class="star-icon">✦</span>
+              <span>CRAFTING SINCE 2022</span>
+            </div>
+
+            <!-- Profile Image Container -->
+            <div class="portrait-image-wrapper">
+              <img id="hero-portrait-img" src="assets/images/profile-placeholder.svg" alt="Alex Rivera - Creative Developer" class="portrait-img">
+            </div>
+
+            <!-- Tags Beneath Portrait -->
+            <div class="portrait-footer-tags" id="hero-portrait-tags">
+              <!-- Populated dynamically from content.js -->
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Subtle Floating Scroll Indicator -->
+      <a href="#about" class="scroll-indicator" aria-label="Scroll down to About section">
+        <div class="scroll-mouse">
+          <div class="scroll-wheel"></div>
+        </div>
+        <span>Scroll to Explore</span>
+      </a>
+    </section>
+
+    <!-- ======================================================================
+         C. ABOUT ME SECTION
+         ====================================================================== -->
+    <section class="section-wrapper about-section" id="about">
+      <div class="container">
+        <div class="about-grid">
+          
+          <!-- Visual Column: Architectural Composition Card -->
+          <div class="about-visual-col">
+            <div class="about-image-card">
+              <div class="about-img-frame">
+                <img id="about-img" src="assets/images/about-image.svg" alt="Design meets code and form" class="about-img" loading="lazy">
+              </div>
+            </div>
+          </div>
+
+          <!-- Text Column: Story, Quote, Stats & Tools -->
+          <div class="about-content-col">
+            <span class="eyebrow" id="about-eyebrow">ABOUT ME // PHILOSOPHY</span>
+            <h2 class="section-title" id="about-heading">Bridging the gap between fine editorial aesthetics and resilient code.</h2>
+            
+            <!-- Highlight Quote -->
+            <div class="about-quote-box">
+              <p class="about-quote-text" id="about-quote">"Whitespace is not empty space; it is the silence between musical notes that gives the melody its power."</p>
+            </div>
+
+            <!-- Story Paragraphs -->
+            <div class="about-paragraphs" id="about-paragraphs">
+              <!-- Populated dynamically from content.js -->
+            </div>
+
+            <!-- Stats Counter Row -->
+            <div class="about-stats-grid" id="about-stats">
+              <!-- Populated dynamically from content.js -->
+            </div>
+
+            <!-- Daily Tools Cloud -->
+            <div class="tools-wrapper">
+              <div class="tools-title">CORE TOOLS &amp; DISCIPLINES</div>
+              <div class="tools-chips" id="about-tools">
+                <!-- Populated dynamically from content.js -->
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         D. SKILLS & SERVICES SECTION
+         ====================================================================== -->
+    <section class="section-wrapper" id="services">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">CAPABILITIES &amp; OFFERINGS</span>
+          <h2 class="section-title">Specialized disciplines tailored for modern digital craft.</h2>
+          <p class="section-desc">Focused expertise spanning interface engineering, editorial brand systems, and interactive experiences. Honest, reliable, and client-dedicated.</p>
+        </div>
+
+        <div class="services-grid" id="services-grid">
+          <!-- Populated dynamically from content.js (5 Service Cards) -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         E. SELECTED PROJECTS SECTION
+         ====================================================================== -->
+    <section class="section-wrapper" id="projects" style="background-color: var(--bg-secondary); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">CURATED WORK // 2025–2026</span>
+          <h2 class="section-title">Selected projects &amp; case studies.</h2>
+          <p class="section-desc">Each project is an exploration of purposeful interaction, thoughtful visual pacing, and clean, performant architecture.</p>
+        </div>
+
+        <div class="projects-container" id="projects-list">
+          <!-- Populated dynamically from content.js (3 Sample Projects) -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         F. GRAPHIC DESIGN SHOWCASE SECTION (Inspired by Reference Video)
+         ====================================================================== -->
+    <section class="section-wrapper graphic-section" id="graphic-design">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow" id="gd-eyebrow">VISUAL IDENTITY &amp; EDITORIAL</span>
+          <h2 class="section-title" id="gd-heading">Form, void &amp; typographic rhythm.</h2>
+          <p class="section-desc" id="gd-desc">A curated collection of poster design studies, packaging concepts, and editorial publications exploring negative space and brutalist elegance.</p>
+        </div>
+
+        <div class="gd-grid" id="gd-grid">
+          <!-- Populated dynamically from content.js (Interactive Lightbox Posters) -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         G. WEB DEVELOPMENT SECTION (Browser-Style Mockups)
+         ====================================================================== -->
+    <section class="section-wrapper" id="web-dev">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow" id="wd-eyebrow">ENGINEERING &amp; CREATIVE CODE</span>
+          <h2 class="section-title" id="wd-heading">Bespoke web applications built for speed &amp; elegance.</h2>
+          <p class="section-desc" id="wd-desc">Clean code architectures, responsive browser layouts, and interactive platforms engineered with precision.</p>
+        </div>
+
+        <div class="webdev-showcase-list" id="wd-list">
+          <!-- Populated dynamically from content.js (Browser-style interactive windows) -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         H. PERSONAL HIGHLIGHT SECTION ("2026")
+         ====================================================================== -->
+    <section class="highlight-section" id="highlight-2026">
+      <!-- Giant Watermark Typography -->
+      <div class="oversized-year-bg" id="highlight-oversized-year" aria-hidden="true">2026</div>
+
+      <!-- Kinetic Infinite Marquee Ticker -->
+      <div class="marquee-container" aria-hidden="true">
+        <div class="marquee-content" id="marquee-content">
+          <!-- Populated dynamically from content.js -->
+        </div>
+      </div>
+
+      <div class="container" style="padding-top: 3.5rem;">
+        <div class="highlight-grid">
+          
+          <!-- Giant 2026 Display -->
+          <div class="highlight-num-col">
+            <span class="eyebrow" style="color: var(--accent-color);">CREATIVE VISION</span>
+            <div class="highlight-giant-number" id="highlight-giant-number">
+              2026<span>.</span>
+            </div>
+            <p style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--dark-text-muted); margin-top: 1rem;">
+              REF: HORIZON // THE NEXT CHAPTER
+            </p>
+          </div>
+
+          <!-- Highlight Philosophy & Checklist -->
+          <div class="highlight-text-col">
+            <h3 class="highlight-title" id="highlight-title">Intentional Simplicity in an Era of Digital Noise.</h3>
+            <p class="highlight-quote" id="highlight-quote">"Every pixel, every transition, and every typeface serves a purpose. Committed to building the next generation of warm, high-craft web experiences."</p>
+
+            <ul class="highlight-checklist" id="highlight-checklist">
+              <!-- Populated dynamically from content.js -->
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         I. CONTACT SECTION
+         ====================================================================== -->
+    <section class="section-wrapper" id="contact" style="background-color: var(--bg-primary);">
+      <div class="container">
+        <div class="contact-grid">
+          
+          <!-- Left Column: Heading, Direct Email Card & Socials -->
+          <div class="contact-info-col">
+            <span class="eyebrow" id="contact-eyebrow">LET'S WORK TOGETHER</span>
+            <h2 class="contact-heading" id="contact-heading">
+              Got a project in mind?
+              <span class="italic-serif" style="display:block; color:var(--accent-color); font-weight:normal;">Let's create something meaningful.</span>
+            </h2>
+
+            <p class="contact-desc" id="contact-desc">
+              Whether you have an upcoming project, need design consultation, or just want to chat about web aesthetics and creative code, my inbox is always open.
+            </p>
+
+            <!-- Direct Email Box with One-Click Copy -->
+            <div class="email-box-card">
+              <div class="email-details">
+                <span class="email-label">DIRECT INBOX</span>
+                <span class="email-address" id="contact-email-text">hello@alexrivera.design</span>
+              </div>
+              <div style="display:flex; gap:0.5rem; align-items:center;">
+                <button type="button" class="copy-btn" onclick="copyEmailAddress()" aria-label="Copy email address to clipboard">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                  </svg>
+                  <span>Copy</span>
+                </button>
+                <a href="mailto:hello@alexrivera.design" class="copy-btn" id="contact-email-link" aria-label="Send email via mail client">
+                  <span>Send Mail ↗</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Social Media Grid -->
+            <div>
+              <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); margin-bottom: 0.75rem;">NETWORK &amp; CHANNELS</div>
+              <div class="social-links-grid" id="social-links-grid">
+                <!-- Populated dynamically from content.js -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Interactive Contact Form -->
+          <div class="contact-form-card">
+            <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem;">Send a Message</h3>
+            <p style="font-size: 0.9rem; margin-bottom: 2rem;">Fill out the details below and I will get back to you within 24 hours.</p>
+
+            <form id="portfolio-contact-form">
+              <div class="form-group">
+                <label for="form-name" class="form-label">Your Name</label>
+                <input type="text" id="form-name" class="form-input" placeholder="e.g. Maya Lin" required>
+              </div>
+
+              <div class="form-group">
+                <label for="form-email" class="form-label">Email Address</label>
+                <input type="email" id="form-email" class="form-input" placeholder="e.g. maya@domain.com" required>
+              </div>
+
+              <div class="form-group">
+                <label for="form-message" class="form-label">Project Details / Message</label>
+                <textarea id="form-message" class="form-textarea" placeholder="Tell me a bit about your project, timeline, and goals..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width: 100%;">
+                <span>Send Message</span>
+                <svg class="icon-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================
+       FOOTER
+       ======================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <span class="footer-name" id="footer-name">Alex Rivera</span>
+          <span class="footer-colophon" id="footer-colophon">Designed with editorial warmth • Built with clean HTML, CSS &amp; Vanilla JS.</span>
+        </div>
+
+        <button class="back-to-top-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" aria-label="Scroll back to top">
+          <span>Back to Top</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="12" y1="19" x2="12" y2="5"></line>
+            <polyline points="5 12 12 5 19 12"></polyline>
+          </svg>
+        </button>
+      </div>
+
+      <div class="footer-bottom-row">
+        <span id="footer-copyright">© 2026 Alex Rivera. All rights reserved.</span>
+        <span>GITHUB PAGES READY // ZERO DEPENDENCY BACKEND</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================================
+       EXPANDED LIGHTBOX MODAL (FOR POSTERS & PROJECTS)
+       ======================================================================== -->
+  <div class="lightbox-modal" id="lightbox-modal" role="dialog" aria-modal="true" aria-label="Project Preview Modal" onclick="if(event.target === this) closeLightbox()">
+    <div class="lightbox-content">
+      <button class="lightbox-close-btn" onclick="closeLightbox()" aria-label="Close modal">✕</button>
+      
+      <div class="lightbox-image-box">
+        <img id="lightbox-img" src="" alt="Expanded preview">
+      </div>
+
+      <div class="lightbox-details">
+        <span class="eyebrow" id="lightbox-category">EXHIBITION // 2026</span>
+        <h3 id="lightbox-title" style="font-size: 1.8rem; font-weight: 800; margin-bottom: 1rem;">Project Title</h3>
+        <p id="lightbox-desc" style="font-size: 0.95rem; line-height: 1.7; color: var(--text-secondary); margin-bottom: 2rem;">Project description goes here.</p>
+        <div>
+          <button type="button" class="btn btn-secondary" onclick="closeLightbox()">Close Preview</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dynamic Toast Notice Container -->
+  <div class="toast-notice" id="toast-notice" role="alert" aria-live="assertive"></div>
+
+</body>
+</html>

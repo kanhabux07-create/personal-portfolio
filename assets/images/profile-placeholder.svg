@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 750" width="100%" height="100%">
+  <defs>
+    <linearGradient id="warmBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F2EDE4" />
+      <stop offset="50%" stop-color="#E5DEC9" />
+      <stop offset="100%" stop-color="#D7CEB5" />
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#C85A32" />
+      <stop offset="100%" stop-color="#E2825B" />
+    </linearGradient>
+    <filter id="grain" x="0%" y="0%" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" result="noise" />
+      <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.07 0" />
+      <feComposite in2="SourceGraphic" in="gl" operator="in" />
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="600" height="750" fill="url(#warmBg)" />
+  <rect width="600" height="750" fill="#141413" opacity="0.03" />
+
+  <!-- Editorial Grid Lines -->
+  <line x1="40" y1="40" x2="560" y2="40" stroke="#141413" stroke-opacity="0.12" stroke-width="1" />
+  <line x1="40" y1="710" x2="560" y2="710" stroke="#141413" stroke-opacity="0.12" stroke-width="1" />
+  <line x1="40" y1="40" x2="40" y2="710" stroke="#141413" stroke-opacity="0.12" stroke-width="1" />
+  <line x1="560" y1="40" x2="560" y2="710" stroke="#141413" stroke-opacity="0.12" stroke-width="1" />
+
+  <!-- Corner Crosses -->
+  <text x="35" y="35" font-family="'Courier New', monospace" font-size="14" fill="#141413" opacity="0.4">+</text>
+  <text x="555" y="35" font-family="'Courier New', monospace" font-size="14" fill="#141413" opacity="0.4">+</text>
+  <text x="35" y="725" font-family="'Courier New', monospace" font-size="14" fill="#141413" opacity="0.4">+</text>
+  <text x="555" y="725" font-family="'Courier New', monospace" font-size="14" fill="#141413" opacity="0.4">+</text>
+
+  <!-- Abstract Aesthetic Portrait Silhouette -->
+  <g transform="translate(150, 140)">
+    <!-- Aura Glow Circle -->
+    <circle cx="150" cy="180" r="140" fill="#E8DEC9" />
+    <circle cx="150" cy="180" r="110" fill="url(#accentGrad)" opacity="0.15" />
+    
+    <!-- Stylized Head and Torso Silhouette -->
+    <!-- Head -->
+    <path d="M 150 70 C 115 70, 95 100, 95 145 C 95 190, 115 220, 150 220 C 185 220, 205 190, 205 145 C 205 100, 185 70, 150 70 Z" fill="#242320" />
+    <!-- Neck -->
+    <path d="M 135 210 L 135 250 L 165 250 L 165 210 Z" fill="#242320" />
+    <!-- Shoulders / Coat -->
+    <path d="M 50 360 C 50 270, 100 245, 135 245 L 165 245 C 200 245, 250 270, 250 360 Z" fill="#181816" />
+    <!-- Lapel Accent -->
+    <path d="M 150 245 L 130 350 L 150 360 L 170 350 Z" fill="#C85A32" opacity="0.85" />
+    <!-- Glasses / Artistic Detail -->
+    <circle cx="132" cy="140" r="14" fill="none" stroke="#F9F6F0" stroke-width="2.5" opacity="0.7" />
+    <circle cx="168" cy="140" r="14" fill="none" stroke="#F9F6F0" stroke-width="2.5" opacity="0.7" />
+    <line x1="146" y1="140" x2="154" y2="140" stroke="#F9F6F0" stroke-width="2.5" opacity="0.7" />
+  </g>
+
+  <!-- Editorial Badge Tag -->
+  <g transform="translate(60, 520)">
+    <rect width="210" height="42" rx="21" fill="#141413" />
+    <circle cx="24" cy="21" r="5" fill="#4ADE80" />
+    <text x="38" y="26" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="600" fill="#FBF9F5" letter-spacing="0.5">AVAILABLE FOR WORK</text>
+  </g>
+
+  <!-- Instruction Stamp / Placeholder Notice -->
+  <g transform="translate(60, 580)">
+    <rect width="480" height="90" rx="8" fill="#FBF9F5" stroke="#141413" stroke-opacity="0.12" stroke-width="1" />
+    <text x="24" y="32" font-family="Georgia, serif" font-size="18" font-style="italic" fill="#141413">Editorial Portrait Placeholder</text>
+    <text x="24" y="58" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#65625D">Replace with your photo in <tspan font-family="monospace" fill="#C85A32">assets/images/profile.jpg</tspan></text>
+    <text x="24" y="75" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#8C887E">Configurable easily via content.js</text>
+  </g>
+
+  <!-- Small Editorial Coordinates -->
+  <text x="60" y="80" font-family="'Courier New', monospace" font-size="11" fill="#141413" opacity="0.6">PORTFOLIO // REF. 2026-EDT</text>
+  <text x="440" y="80" font-family="'Courier New', monospace" font-size="11" fill="#141413" opacity="0.6">FIG. 01 [CREATIVE]</text>
+</svg>
